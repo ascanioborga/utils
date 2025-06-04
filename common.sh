@@ -40,4 +40,14 @@ nc -l -p 8080
 #verify ssh connection
 ssh -o MACs=hmac-sha2-256 192.168.1.1
 ssh -Q mac
-ssh-keygen -R 192.168.1.1
+
+#create ssh private/public key pair
+ssh-keygen
+#install an ssh key on a server as an authorized key
+ssh-copy-id user@server
+
+#verifica versione os
+cat /etc/os-release
+
+#verifica postfix
+rpm -q postfix
