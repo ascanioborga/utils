@@ -51,3 +51,26 @@ cat /etc/os-release
 
 #verifica postfix
 rpm -q postfix
+
+#visualizzare tutte le utenze
+cut -d: -f1 /etc/passwd
+#visualizzare soltanto le utenze non di sistema (uid >= 1000)
+awk -F: '$3 >= 1000 && $3 < 65534 { print $1 }' /etc/passwd
+
+#visualizzare info di uno utente e i suoi gruppi
+id utente
+#visualizzare soltanto i gruppi
+id -nG utente
+
+#creare un nuovo utente
+sudo adduser utente
+#assegnare gruppi ad un utente
+sudo usermod -aG gruppo1,gruppo2,... utente
+#assegnare una password
+sudo passwd utente
+#sbloccare la password
+sudo passwd -u utente
+#eliminare la scadenza della password
+sudo passwd -x 99999 utente
+#verificare lo status della password di un utente
+sudo passwd -S utente
