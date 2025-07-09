@@ -46,31 +46,31 @@ ssh-keygen
 #install an ssh key on a server as an authorized key
 ssh-copy-id user@server
 
-#verifica versione os
+#verify os version
 cat /etc/os-release
 
-#verifica postfix
+#verify postfix
 rpm -q postfix
 
-#visualizzare tutte le utenze
+#view all users
 cut -d: -f1 /etc/passwd
-#visualizzare soltanto le utenze non di sistema (uid >= 1000)
+#view all non-system users (uid >= 1000)
 awk -F: '$3 >= 1000 && $3 < 65534 { print $1 }' /etc/passwd
 
-#visualizzare info di uno utente e i suoi gruppi
-id utente
-#visualizzare soltanto i gruppi
-id -nG utente
+#view user info and groups
+id user1
+#view user groups
+id -nG user1
 
-#creare un nuovo utente
-sudo adduser utente
-#assegnare gruppi ad un utente
-sudo usermod -aG gruppo1,gruppo2,... utente
-#assegnare una password
-sudo passwd utente
-#sbloccare la password
-sudo passwd -u utente
-#eliminare la scadenza della password
-sudo passwd -x 99999 utente
-#verificare lo status della password di un utente
-sudo passwd -S utente
+#create new user
+sudo adduser user1
+#assign groups to a user
+sudo usermod -aG gruppo1,gruppo2,... user1
+#set user password
+sudo passwd user1
+#unlock user password
+sudo passwd -u user1
+#set password expiration
+sudo passwd -x 99999 user1
+#verify user password status
+sudo passwd -S user1
