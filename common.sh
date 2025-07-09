@@ -65,7 +65,7 @@ id -nG user1
 #create new user
 sudo adduser user1
 #assign groups to a user
-sudo usermod -aG gruppo1,gruppo2,... user1
+sudo usermod -aG group1,group2,... user1
 #set user password
 sudo passwd user1
 #unlock user password
