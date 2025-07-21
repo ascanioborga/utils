@@ -2,7 +2,7 @@
 #find any file named "common.sh"
 find . -type f -name common.sh
 #find any file named "common.sh" and displays as output of ls -l command
-find . -type f -name common.sh | xargs -I {} ls -l
+find . -type f -name common.sh -exec ls -lh {} \;
 
 #find any file modified after 2024-12-31
 find . -type f -newermt 2024-12-31
